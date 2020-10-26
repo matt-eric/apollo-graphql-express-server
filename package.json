@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
     "nodemon": "^2.0.6"
   }
 }
