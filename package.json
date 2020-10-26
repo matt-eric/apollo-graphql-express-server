@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side/issues"
   },
-  "homepage": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side#readme"
+  "homepage": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
