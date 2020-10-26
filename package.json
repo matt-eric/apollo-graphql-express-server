@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side/issues"
   },
-  "homepage": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side#readme"
+  "homepage": "https://github.com/matt-eric/this-seems-WAY-out-there-node-side#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
