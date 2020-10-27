@@ -41,7 +41,7 @@ const resolvers = {
     user: (parent, { id }) => {
       return users[id];
     },
-    me: () => {
+    me: (parent, args, { me }) => {
       return me;
     },
   },
