@@ -26,6 +26,11 @@ const resolvers = {
         username: 'Matt',
       };
     },
+    user: (parent, args) => {
+      return {
+        username: 'Eric',
+      };
+    },
   },
 };
 
