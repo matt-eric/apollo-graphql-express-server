@@ -10,6 +10,7 @@ app.use(cors());
 const schema = gql`
   type Query {
     me: User
+    user(id: ID!): User
   }
 
   type User {
@@ -21,7 +22,7 @@ const resolvers = {
   Query: {
     me: () => {
       return {
-        username: 'Robin Wieruch',
+        username: 'Matt',
       };
     },
   },
