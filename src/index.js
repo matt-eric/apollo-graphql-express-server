@@ -20,6 +20,19 @@ const schema = gql`
   }
 `;
 
+let users = {
+  1: {
+    id: '1',
+    username: 'Matt',
+  },
+  2: {
+    id: '2',
+    username: 'Eric',
+  },
+};
+
+const me = users[1];
+
 const resolvers = {
   Query: {
     users: () => {
