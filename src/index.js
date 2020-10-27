@@ -14,6 +14,7 @@ const schema = gql`
   }
 
   type User {
+    id: ID!
     username: String!
   }
 `;
