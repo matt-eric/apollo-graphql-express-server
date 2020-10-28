@@ -44,9 +44,9 @@ export default {
       return true;
     },
   },
-  User: {
-    effects: user => {
-      return Object.values(effects).filter(
+  User: {  
+    effects: (user, args, { models }) => {
+      return Object.values(models.effects).filter(
         effect => effect.userId === user.id,
       );
     },
