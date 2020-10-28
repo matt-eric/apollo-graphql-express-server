@@ -33,3 +33,36 @@ sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
     console.log('Apollo Server on http://localhost:8000/graphql');
   });
 });
+
+const createUsersWithEffects = async () => {
+  await models.User.create(
+    {
+      username: 'Matt Eric',
+      effects: [
+        {
+          type: 'Waveform',
+        },
+      ],
+    },
+    {
+      include: [models.Effect],
+    },
+  );
+
+  await models.User.create(
+    {
+      username: 'Matthew Eric',
+      effects: [
+        {
+          type: 'Waveform',
+        },
+        {
+          type: 'Grid Cells',
+        },
+      ],
+    },
+    {
+      include: [models.Effect],
+    },
+  );
+};
