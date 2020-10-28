@@ -91,6 +91,7 @@ const resolvers = {
       };
 
       effects[id] = effect;
+      users[me.id].effectIds.push(id);
 
       return effect;
     },
