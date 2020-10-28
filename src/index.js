@@ -49,10 +49,12 @@ let effects = {
   1: {
     id: '1',
     type: 'Waveform',
+    userId: '1',
   },
   2: {
     id: '2',
     type: 'Grid Cells',
+    userId: '2',
   },
 };
 
