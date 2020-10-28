@@ -13,6 +13,6 @@ const effectSchema = new mongoose.Schema(
   },
 );
 
-const effect = mongoose.model('Message', effectSchema);
+const effect = mongoose.model('Effect', effectSchema);
 
 export default effect;
