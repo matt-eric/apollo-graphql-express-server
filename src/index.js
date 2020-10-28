@@ -78,8 +78,8 @@ const resolvers = {
 
   },
   Effect: {
-    user: (parent, args, { me }) => {
-      return me;
+    user: effect => {
+      return users[effect.userId];
     },
   },
 };
