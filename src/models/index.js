@@ -1,25 +1,14 @@
-import Sequelize from 'sequelize';
+import mongoose from 'mongoose';
 
-const sequelize = new Sequelize(
-  process.env.DATABASE,
-  process.env.DATABASE_USER,
-  process.env.DATABASE_PASSWORD,
-  {
-    dialect: 'postgres',
-  },
-);
+import user from './user';
+import effect from './effect';
 
-const models = {
-  User: require('./user'),
-  Effect: require('./effect'),
-};
+let mongoURL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@realmcluster.sh5nv.mongodb.net/${process.env.MONGO_CLUSTER}?retryWrites=true&w=majority`
 
-Object.keys(models).forEach(key => {
-  if ('associate' in models[key]) {
-    models[key].associate(models);
-  }
-});
+const connectDb = () => mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true});
 
-export { sequelize };
+const models = { user, effect };
+
+export { connectDb };
 
 export default models;

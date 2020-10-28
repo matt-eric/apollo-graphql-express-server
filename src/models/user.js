@@ -1,29 +1,24 @@
-const user = (sequelize, DataTypes) => {
-  const User = sequelize.define('user', {
-    username: {
-      type: DataTypes.STRING,
-    },
+import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+});
+
+userSchema.statics.findByLogin = async function(login) {
+  let user = await this.findOne({
+    username: login,
   });
-
-  User.associate = models => {
-    User.hasMany(models.Effect, { onDelete: 'CASCADE' });
-  };
-
-  User.findByLogin = async login => {
-    let user = await User.findOne({
-      where: { username: login },
-    });
-
-    if (!user) {
-      user = await User.findOne({
-        where: { email: login },
-      });
-    }
-
-    return user;
-  };
-
-  return User;
+  return user;
 };
+
+userSchema.pre('remove', function(next) {
+  this.model('Effect').deleteMany({ userId: this._id }, next);
+});
+
+const user = mongoose.model('User', userSchema);
 
 export default user;

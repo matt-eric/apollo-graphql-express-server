@@ -1,15 +1,18 @@
-const effect = (sequelize, DataTypes) => {
-  const Effect = sequelize.define('effect', {
+import mongoose from 'mongoose';
+
+const effectSchema = new mongoose.Schema(
+  {
     type: {
-      type: DataTypes.STRING,
+      type: String,
+      required: true,
     },
-  });
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  },
+  {
+    timestamps: true,
+  },
+);
 
-  Effect.associate = models => {
-    Effect.belongsTo(models.Effect);
-  };
-
-  return Effect;
-};
+const effect = mongoose.model('Message', effectSchema);
 
 export default effect;
