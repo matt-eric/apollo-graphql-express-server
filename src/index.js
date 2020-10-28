@@ -34,10 +34,12 @@ let users = {
   1: {
     id: '1',
     username: 'Matt',
+    effectIds: [1],
   },
   2: {
     id: '2',
     username: 'Eric',
+    effectIds: [2],
   },
 };
 
