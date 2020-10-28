@@ -75,7 +75,13 @@ const resolvers = {
     effect: (parent, { id }) => {
       return effects[id];
     },
-
+  },
+  User: {
+    effects: user => {
+      return Object.values(effects).filter(
+        effect => effect.userId === user.id,
+      );
+    },
   },
   Effect: {
     user: effect => {
