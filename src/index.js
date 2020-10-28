@@ -17,6 +17,10 @@ const schema = gql`
     effect(id: ID!): Effect!
   }
 
+  type Mutation {
+    createEffect(type: String!): Effect!
+  }
+
   type User {
     id: ID!
     username: String!
