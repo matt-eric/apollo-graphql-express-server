@@ -63,6 +63,13 @@ const resolvers = {
     me: (parent, args, { me }) => {
       return me;
     },
+    effects: () => {
+      return Object.values(effects);
+    },
+    effect: (parent, { id }) => {
+      return effects[id];
+    },
+
   },
 };
 
