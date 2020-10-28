@@ -25,6 +25,7 @@ const schema = gql`
   type Effect {
     id: ID!
     type: String!
+    user: User!
   }
 `;
 
