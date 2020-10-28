@@ -2,42 +2,27 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default {
   Query: {
-    effects: (parent, args, { models }) => {
-      return Object.values(models.effects);
+    effects: async (parent, args, { models }) => {
+      return await models.Effect.findAll();
     },
-    effect: (parent, { id }, { models }) => {
-      return models.effects[id];
+    effect: async (parent, { id }, { models }) => {
+      return await models.Effect.findByPk(id);
     },
   },
   Mutation: {
-    createEffect: (parent, { text }, { me, models }) => {
-      const id = uuidv4();
-      const effect = {
-        id,
+    createEffect: async (parent, { text }, { me, models }) => {
+      return await models.Effect.create({
         type,
         userId: me.id,
-      };
-
-      models.effects[id] = effect;
-      models.users[me.id].effectIds.push(id);
-
-      return effect;
+      });
     },
     deleteEffect: (parent, { id }, { models }) => {
       const { [id]: effect, ...otherEffects } = models.effects;
-
-      if (!effect) {
-        return false;
-      }
-
-      models.effects = otherEffects;
-
-      return true;
     },
   },
   Effect: {
-    user: (message, args, { models }) => {
-      return models.users[effect.userId];
+    user: async (effect, args, { models }) => {
+      return await models.User.findByPk(effect.userId);
     },
   },
 };
