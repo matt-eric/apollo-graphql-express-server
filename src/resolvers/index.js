@@ -19,7 +19,7 @@ export default {
     },
   },
   Mutation: {
-    createEffect: (parent, { type }, { me }) => {
+    createEffect: (parent, { text }, { me, models }) => {
       const id = uuidv4();
       const effect = {
         id,
@@ -27,8 +27,8 @@ export default {
         userId: me.id,
       };
 
-      effects[id] = effect;
-      users[me.id].effectIds.push(id);
+      models.effects[id] = effect;
+      models.users[me.id].effectIds.push(id);
 
       return effect;
     },
