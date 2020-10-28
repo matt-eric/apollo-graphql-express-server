@@ -96,6 +96,17 @@ const resolvers = {
 
       return effect;
     },
+    deleteEffect: (parent, { id }) => {
+      const { [id]: effect, ...otherEffects } = effects;
+
+      if (!effect) {
+        return false;
+      }
+
+      effects = otherEffects;
+
+      return true;
+    },
   },
   User: {
     effects: user => {
