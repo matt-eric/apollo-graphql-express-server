@@ -90,6 +90,8 @@ const resolvers = {
         userId: me.id,
       };
 
+      effects[id] = effect;
+
       return effect;
     },
   },
