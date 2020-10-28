@@ -16,7 +16,7 @@ const server = new ApolloServer({
   resolvers,
   context: {
     models,
-    me: models.users[1],
+    me: models.User.findByLogin('Matt Eric'),
   },
 });
 
