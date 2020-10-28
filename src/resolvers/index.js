@@ -52,8 +52,8 @@ export default {
     },
   },
   Effect: {
-    user: effect => {
-      return users[effect.userId];
+    user: (message, args, { models }) => {
+      return models.users[effect.userId];
     },
   },
 };
