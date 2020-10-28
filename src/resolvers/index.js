@@ -32,14 +32,14 @@ export default {
 
       return effect;
     },
-    deleteEffect: (parent, { id }) => {
-      const { [id]: effect, ...otherEffects } = effects;
+    deleteEffect: (parent, { id }, { models }) => {
+      const { [id]: effect, ...otherEffects } = models.effects;
 
       if (!effect) {
         return false;
       }
 
-      effects = otherEffects;
+      models.effects = otherEffects;
 
       return true;
     },
