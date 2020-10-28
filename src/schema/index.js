@@ -1,29 +1,20 @@
 import { gql } from 'apollo-server-express';
 
-export default gql`
-  type Query {
-    users: [User!]
-    user(id: ID!): User
-    me: User
+import userSchema from './user';
+import effectSchema from './effect';
 
-    effects: [Effect!]!
-    effect(id: ID!): Effect!
+const linkSchema = gql`
+  type Query {
+    _: Boolean
   }
 
   type Mutation {
-    createEffect(type: String!): Effect!
-    deleteEffect(id: ID!): Boolean!
+    _: Boolean
   }
 
-  type User {
-    id: ID!
-    username: String!
-    effects: [Effect!]
-  }
-
-  type Effect {
-    id: ID!
-    type: String!
-    user: User!
+  type Subscription {
+    _: Boolean
   }
 `;
+
+export default [linkSchema, userSchema, effectSchema];
