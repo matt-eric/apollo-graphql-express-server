@@ -80,6 +80,16 @@ const resolvers = {
       return effects[id];
     },
   },
+  Mutation: {
+    createEffect: (parent, { type }, { me }) => {
+      const effect = {
+        type,
+        userId: me.id,
+      };
+
+      return effect;
+    },
+  },
   User: {
     effects: user => {
       return Object.values(effects).filter(
