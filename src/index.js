@@ -4,6 +4,9 @@ import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 import { v4 as uuidv4 } from 'uuid';
 
+import models from './models';
+
+
 const app = express();
 
 app.use(cors());
@@ -35,34 +38,6 @@ const schema = gql`
     user: User!
   }
 `;
-
-let users = {
-  1: {
-    id: '1',
-    username: 'Matt',
-    effectIds: [1],
-  },
-  2: {
-    id: '2',
-    username: 'Eric',
-    effectIds: [2],
-  },
-};
-
-const me = users[1];
-
-let effects = {
-  1: {
-    id: '1',
-    type: 'Waveform',
-    userId: '1',
-  },
-  2: {
-    id: '2',
-    type: 'Grid Cells',
-    userId: '2',
-  },
-};
 
 const resolvers = {
   Query: {
@@ -126,7 +101,8 @@ const server = new ApolloServer({
   typeDefs: schema,
   resolvers,
   context: {
-    me: users[1],
+    models,
+    me: models.users[1],
   },
 });
 
