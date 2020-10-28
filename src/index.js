@@ -3,7 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 
-import models from './models';
+import models, { sequelize } from './models';
 import resolvers from './resolvers';
 import schema from './schema'
 
