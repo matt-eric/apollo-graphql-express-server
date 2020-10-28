@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import cors from 'cors';
+import morgan from 'morgan';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 
@@ -10,6 +11,8 @@ import schema from './schema'
 const app = express();
 
 app.use(cors());
+
+app.use(morgan('dev'));
 
 const server = new ApolloServer({
   typeDefs: schema,
