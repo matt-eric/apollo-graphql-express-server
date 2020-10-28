@@ -29,50 +29,46 @@ server.applyMiddleware({ app, path: '/graphql' });
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
-const isTest = !!process.env.TEST_DATABASE_URL;
-const isProduction = process.env.NODE_ENV === 'production';
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 connectDb().then(async () => {
-  if (isTest || isProduction) {
-    // reset database
-    await Promise.all([
-      models.User.deleteMany({}),
-      models.Message.deleteMany({}),
-    ]);
 
-    createUsersWithEffects();
-  }
+  await Promise.all([
+    models.user.deleteMany({}),
+    models.effect.deleteMany({}),
+  ]);
+
+  createUsersWithEffects();
 
   httpServer.listen({ port }, () => {
     console.log(`Apollo Server on http://localhost:${port}/graphql`);
   });
 });
 
-const createUsersWithEffects = async date => {
-  const user1 = new models.User(
+const createUsersWithEffects = async () => {
+  const user1 = new models.user(
     {
       username: 'Matt Eric',
     },
   );
 
-  const user2 = new models.User(
+  const user2 = new models.user(
     {
       username: 'Matthew Eric',
     },
   );
 
-  const effect1 = new models.Effect({
+  const effect1 = new models.effect({
     type: 'Waveform',
     userId: user1.id,
   });
 
-  const effect2 = new models.Effect({
+  const effect2 = new models.effect({
     type: 'Waveform',
     userId: user2.id,
   });
 
-  const effect3 = new models.Effect({
+  const effect3 = new models.effect({
     type: 'Grid Cells',
     userId: user2.id,
   });
