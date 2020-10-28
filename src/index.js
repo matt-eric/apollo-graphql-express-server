@@ -10,13 +10,21 @@ app.use(cors());
 const schema = gql`
   type Query {
     users: [User!]
-    me: User
     user(id: ID!): User
+    me: User
+
+    effects: [Effect!]!
+    effect(id: ID!): Effect!
   }
 
   type User {
     id: ID!
     username: String!
+  }
+
+  type Effect {
+    id: ID!
+    type: String!
   }
 `;
 
