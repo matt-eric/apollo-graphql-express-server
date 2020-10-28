@@ -72,6 +72,11 @@ const resolvers = {
     },
 
   },
+  Effect: {
+    user: (parent, args, { me }) => {
+      return me;
+    },
+  },
 };
 
 const server = new ApolloServer({
