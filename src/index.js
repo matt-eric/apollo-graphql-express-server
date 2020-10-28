@@ -20,6 +20,7 @@ const schema = gql`
   type User {
     id: ID!
     username: String!
+    effects: [Effect!]
   }
 
   type Effect {
