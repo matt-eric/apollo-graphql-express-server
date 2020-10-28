@@ -11,11 +11,11 @@ export default {
     me: (parent, args, { me }) => {
       return me;
     },
-    effects: () => {
-      return Object.values(effects);
+    effects: (parent, args, { models }) => {
+      return Object.values(models.effects);
     },
-    effect: (parent, { id }) => {
-      return effects[id];
+    effect: (parent, { id }, { models }) => {
+      return models.effects[id];
     },
   },
   Mutation: {
