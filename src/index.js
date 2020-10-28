@@ -2,6 +2,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
+import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 
@@ -82,7 +83,9 @@ const resolvers = {
   },
   Mutation: {
     createEffect: (parent, { type }, { me }) => {
+      const id = uuidv4();
       const effect = {
+        id,
         type,
         userId: me.id,
       };
