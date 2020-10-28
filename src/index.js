@@ -2,6 +2,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
+import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 
@@ -15,6 +16,11 @@ const schema = gql`
 
     effects: [Effect!]!
     effect(id: ID!): Effect!
+  }
+
+  type Mutation {
+    createEffect(type: String!): Effect!
+    deleteEffect(id: ID!): Boolean!
   }
 
   type User {
@@ -74,6 +80,32 @@ const resolvers = {
     },
     effect: (parent, { id }) => {
       return effects[id];
+    },
+  },
+  Mutation: {
+    createEffect: (parent, { type }, { me }) => {
+      const id = uuidv4();
+      const effect = {
+        id,
+        type,
+        userId: me.id,
+      };
+
+      effects[id] = effect;
+      users[me.id].effectIds.push(id);
+
+      return effect;
+    },
+    deleteEffect: (parent, { id }) => {
+      const { [id]: effect, ...otherEffects } = effects;
+
+      if (!effect) {
+        return false;
+      }
+
+      effects = otherEffects;
+
+      return true;
     },
   },
   User: {
