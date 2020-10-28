@@ -41,6 +41,17 @@ let users = {
 
 const me = users[1];
 
+let effects = {
+  1: {
+    id: '1',
+    type: 'Waveform',
+  },
+  2: {
+    id: '2',
+    type: 'Grid Cells',
+  },
+};
+
 const resolvers = {
   Query: {
     users: () => {
