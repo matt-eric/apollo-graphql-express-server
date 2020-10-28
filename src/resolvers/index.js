@@ -2,11 +2,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default {
   Query: {
-    users: () => {
-      return Object.values(users);
+    users: (parent, args, { models }) => {
+      return Object.values(models.users);
     },
-    user: (parent, { id }) => {
-      return users[id];
+    user: (parent, { id }, { models }) => {
+      return models.users[id];
     },
     me: (parent, args, { me }) => {
       return me;
