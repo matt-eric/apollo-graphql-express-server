@@ -20,6 +20,7 @@ const schema = gql`
 
   type Mutation {
     createEffect(type: String!): Effect!
+    deleteEffect(id: ID!): Boolean!
   }
 
   type User {
