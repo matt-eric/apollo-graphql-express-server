@@ -10,8 +10,8 @@ const sequelize = new Sequelize(
 );
 
 const models = {
-  User: sequelize.import('./user'),
-  Effect: sequelize.import('./effect'),
+  User: require('./user'),
+  Effect: require('./effect'),
 };
 
 Object.keys(models).forEach(key => {
