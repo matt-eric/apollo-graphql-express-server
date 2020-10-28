@@ -5,9 +5,9 @@ import http from 'http';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 
-import models, { connectDb } from './models';
-import resolvers from './resolvers';
-import schema from './schema'
+import models, { connectDb } from './graphQL/models';
+import resolvers from './graphQL/resolvers';
+import schema from './graphQL/schema'
 
 const app = express();
 
