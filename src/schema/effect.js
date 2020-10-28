@@ -1,12 +1,12 @@
 import { gql } from 'apollo-server-express';
 
 export default gql`
-  type Query {
+  extend type Query {
     effects: [Effect!]!
     effect(id: ID!): Effect!
   }
 
-  type Mutation {
+  extend type Mutation {
     createEffect(type: String!): Effect!
     deleteEffect(id: ID!): Boolean!
   }
