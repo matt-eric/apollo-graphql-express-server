@@ -9,6 +9,9 @@ import models, { connectDb } from './graphQL/models';
 import resolvers from './graphQL/resolvers';
 import schema from './graphQL/schema'
 
+import effects from './seedData/effects'
+import users from './seedData/users'
+
 const app = express();
 
 app.use(cors());
@@ -46,38 +49,16 @@ connectDb().then(async () => {
 });
 
 const createUsersWithEffects = async () => {
-  const user1 = new models.user(
-    {
-      username: 'Matt Eric',
-    },
-  );
 
-  const user2 = new models.user(
-    {
-      username: 'Matthew Eric',
-    },
-  );
+  effects.noise['userId'] = users.user1.id
+  effects.waveform['userId'] = users.user2.id
+  effects.gridcells['userId'] = users.user2.id
 
-  const effect1 = new models.effect({
-    type: 'Waveform',
-    userId: user1.id,
-  });
+  await effects.noise.save();
+  await effects.waveform.save();
+  await effects.gridcells.save();
 
-  const effect2 = new models.effect({
-    type: 'Waveform',
-    userId: user2.id,
-  });
-
-  const effect3 = new models.effect({
-    type: 'Grid Cells',
-    userId: user2.id,
-  });
-
-  await effect1.save();
-  await effect2.save();
-  await effect3.save();
-
-  await user1.save();
-  await user2.save();
+  await users.user1.save();
+  await users.user2.save();
 
 };
