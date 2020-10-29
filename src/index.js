@@ -20,7 +20,7 @@ const server = new ApolloServer({
   resolvers,
   context: async () => ({
     models,
-    me: await models.User.findByLogin('Matt Eric'),
+    me: await models.user.findByLogin('Matt Eric'),
   }),
 });
 
