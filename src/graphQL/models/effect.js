@@ -29,28 +29,20 @@ const effectSchema = new mongoose.Schema(
           required: true,
         },
         value: {
-          value: {
-            type: Number,
-            required: true,
-          }
+          type: Number,
+          required: true,
         },
         max: {
-          value: {
-            type: Number,
-            required: true,
-          }
+          type: Number,
+          required: true,
         },
         min: {
-          value: {
-            type: Number,
-            required: true,
-          }
+          type: Number,
+          required: true,
         },
         step: {
-          value: {
-            type: Number,
-            required: true,
-          }
+          type: Number,
+          required: true,
         },
       })
     ],

@@ -20,22 +20,12 @@ export default gql`
     user: User!
   }
 
-  type ParamInt {
-    value: Int
-  }
-
-  type ParamFloat {
-    value: Float
-  }
-
-  union ParamValue = ParamInt | ParamFloat
-
   type ParameterSpecifications {
     type: String!
     displayName: String!
-    value: ParamValue
-    max: ParamValue
-    min: ParamValue
-    step: ParamValue
+    value: Int!
+    max: Int!
+    min: Int!
+    step: Int!
   }
 `;

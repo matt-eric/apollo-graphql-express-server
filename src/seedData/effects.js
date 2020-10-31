@@ -8,18 +8,18 @@ const noise = new models.effect({
     {
       type: 'behavior',
       displayName: 'Behavior',
-      value: { value: 10 },
-      max: { value: 40 },
-      min: { value: 1 },
-      step: { value: 1 }
+      value: 10,
+      max: 40,
+      min: 1,
+      step: 1
     },
     {
       type: 'speed',
       displayName: 'Speed',
-      value: { value: .08 },
-      max: { value: .1 },
-      min: { value: .01 },
-      step: { value: .01 }
+      value: .08,
+      max: .1,
+      min: .01,
+      step: .01
     },
   ],
 });
@@ -33,18 +33,18 @@ const waveform = new models.effect({
     {
       type: 'alpha',
       displayName: 'Alpha',
-      value: { value: .75 },
-      max: { value: .99 },
-      min: { value: 0 },
-      step: { value: .01 }
+      value: .75,
+      max: .99,
+      min: 0,
+      step: .01
     },
     {
       type: 'points',
       displayName: 'Point Radius',
-      value: { value: 3 },
-      max: { value: 15 },
-      min: { value: 1 },
-      step: { value: 1 }
+      value: 3,
+      max: 15,
+      min: 1,
+      step: 1
     },
   ],
 });
@@ -57,26 +57,26 @@ const gridcells = new models.effect({
     {
       type: 'focus',
       displayName: 'Focus',
-      value: { value: .87 },
-      max: { value: .99 },
-      min: { value: 0 },
-      step: { value: .01 }
+      value: .87,
+      max: .99,
+      min: 0,
+      step: .01
     },
     {
       type: 'columns',
       displayName: 'Columns',
-      value: { value: 15 },
-      max: { value: 15 },
-      min: { value: 1 },
-      step: { value: 1 }
+      value: 15,
+      max: 15,
+      min: 1,
+      step: 1
     },
     {
       type: 'rows',
       displayName: 'Rows',
-      value: { value: 15 },
-      max: { value: 15 },
-      min: { value: 1 },
-      step: { value: 1 }
+      value: 15,
+      max: 15,
+      min: 1,
+      step: 1
     }
   ],
 });
