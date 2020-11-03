@@ -58,7 +58,7 @@ const gridcells = new models.effect({
       type: 'focus',
       displayName: 'Focus',
       value: 870,
-      max: .990,
+      max: 990,
       min: 0,
       step: 10
     },
