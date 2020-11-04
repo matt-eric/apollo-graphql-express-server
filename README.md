@@ -19,11 +19,11 @@ b. Ensure that the cluster has:
 
 Create a `.env` file in the root directory and add the following variables:
 
-MONGO_USER=< Your Cluster User >
+`MONGO_USER=< Your Cluster User >`
 
-MONGO_PASS=< Your Cluster Password >
+`MONGO_PASS=< Your Cluster Password >`
 
-MONGO_CLUSTER=Effects
+`MONGO_CLUSTER=Effects`
 
 ### 3. Scripts:
 
@@ -41,4 +41,4 @@ Open [http://localhost:8000/graphql](http://localhost:8000/graphql) to view it i
 - [x] Apollo
 - [x] Google App Engine
 
-### Contributing guidelines will be added soon.
+Contributing guidelines to be added soon.
