@@ -26,6 +26,9 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "apollo-server": "^2.18.2",
     "apollo-server-express": "^2.18.2",
     "cors": "^2.8.5",
