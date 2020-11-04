@@ -31,7 +31,7 @@ Create a `.env` file in the root directory and add the following variables:
 
 ### `npm run dev`
 
-Runs the GraphQL Playground Apollo Server in the development mode.\
+Runs the Apollo server in development mode.\
 Open [http://localhost:8000/graphql](http://localhost:8000/graphql) to view it in the browser.
 
 ### Technologies used:
