@@ -6,7 +6,7 @@
 
 #### This GraphQL Apollo server currently sends seed data to be used as default values for the effect module parameters in the React.js client-side application (both in development and production). More client/server communication methods will be implemented as development continues.
 
-## Steps for starting the development environment:
+## Steps for starting the development server:
 
 ### 1. Setup MongoDB:
 
