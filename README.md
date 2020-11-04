@@ -43,4 +43,4 @@ Open [http://localhost:8000/graphql](http://localhost:8000/graphql) to view it i
 - [x] Apollo
 - [x] Google App Engine
 
-Contributing guidelines to be added soon.
+#### Contributing guidelines to be added soon.
