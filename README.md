@@ -4,7 +4,7 @@
 
 ### This project has an accompanying [client-side repository](https://github.com/matt-eric/this-seems-WAY-out-there-react-side).
 
-#### This GraphQL Apollo server currently sends seed data to be used as default values for the effect module parameters in the React.js client-side application (both in development and production). More client/server communication methods will be implemented as development continues.
+#### This GraphQL Apollo server currently sends seed data to be used as default values for the effect module parameters in the React.js client-side application (in development and production). More client/server communication methods will be implemented as development continues.
 
 ## Steps for starting the development server:
 
