@@ -1,4 +1,4 @@
-# *This seems WAY out there. (Server)*
+# This seems WAY out there. *(Server)*
 
 ### *A visual effect web app generating responses based on mouse/touch placement and movement. Parameters are adjustable through a user-controllable effect bus.*
 
