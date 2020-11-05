@@ -41,7 +41,6 @@ Open [http://localhost:8000/graphql](http://localhost:8000/graphql) to view it i
 - [x] MongoDB
 - [x] GraphQL
 - [x] Apollo
-- [x] Google App Engine
 
 This repository is configured for deployment with [Google App Engine](https://cloud.google.com/appengine).
 
