@@ -1,10 +1,8 @@
-# This seems WAY out there. *(Server)*
+# This seems WAY out there. *(Back End)*
 
 ### *A visual effect web app generating responses based on mouse/touch placement and movement. Parameters are adjustable through a user-controllable effect bus.*
 
-### This project has an accompanying [client-side repository](https://github.com/matt-eric/this-seems-WAY-out-there-react-side).
-
-#### This GraphQL Apollo server currently sends seed data to be used as default values for effect module parameters in the React.js client-side application (in development and production). More client/server communication methods will be implemented as development continues.
+### This project has an accompanying [front end repository](https://github.com/matt-eric/this-seems-WAY-out-there-react-side).
 
 ## Steps for starting the development server:
 
