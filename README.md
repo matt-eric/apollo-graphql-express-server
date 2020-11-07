@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/matt-eric/this-seems-WAY-out-there-node-side.svg?branch=master)](https://travis-ci.com/matt-eric/this-seems-WAY-out-there-node-side)
+
 # This seems WAY out there. *(Back End)*
 
 ### *A visual effect web app generating responses based on mouse/touch placement and movement. Parameters are adjustable through a user-controllable effect bus.*
